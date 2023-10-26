@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6, p, ul{
     font-family: 'Source Sans 3', sans-serif;
 }
 
+.toggler-icon i{
+    color: #FFFFFF;
+}
+
 header{
     background-image: url(../images/banner.png);
     background-position: center;
@@ -30,17 +34,25 @@ header::after{
     z-index: -1;
 }
 
+.nav_list{
+    display: flex;
+    justify-content: end;
+}
+
+.nav-item{
+    margin-left: 30px;
+    list-style: none;
+}
+
 .nav-link{
     color: #fffefe;
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 500;
     position: relative;
-    padding: 0px !important;
+    padding: 0 !important;
 }
-.nav-item{
-    margin-left: 30px;
-}
+
 .nav-link:hover{
     color: #FFF;
 }
@@ -74,6 +86,7 @@ header::after{
 }
 
 .banner{
+    display: flex;
     align-items: center;
     min-height: 90vh;
 }
@@ -134,8 +147,11 @@ header::after{
 .phone{
     position: absolute;
     bottom: 0;
-    right: 110px;
-    width: 35%;
+    right: 60px;
+    width: 36%;
+}
+.phone_on_small_device{
+    display: none;
 }
 
 .feature{
@@ -144,7 +160,7 @@ header::after{
 
 .section_title{
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 .section_title h4{
     color: #008ed6;
@@ -213,7 +229,7 @@ header::after{
     color: #008ed6;
     font-size: 35px;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .feature_item h2{
@@ -222,16 +238,15 @@ header::after{
     margin-bottom: 12px;
 }
 .feature_item p{
-    font-size: 18px;
     font-weight: 400;
 }
 
 hr{
-    color: #ededed;
+    color: #e2e2e2;
 }
 
 .detail_section{
-
+    padding: 70px 0;
 }
 .detail_section .section_title, .customize_section .section_title{
     text-align: left;
@@ -241,7 +256,7 @@ hr{
     margin: 20px 0;
 }
 .phone_img{
-
+    text-align: center;
 }
 .detail_section p{
     margin-bottom: 20px;
@@ -276,11 +291,10 @@ hr{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-block-size: 100vh;
     padding: 70px 0px;
 }
 .testimonial_section .section_title{
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 .testimonial_section .section_title h1{
     color: #ffffff;
@@ -288,11 +302,19 @@ hr{
 .testimonial_section .section_title span, .pricing_section .section_title span, .contact_us .section_title span{
     margin: 20px auto;
 }
-.testimonial_section p{
+
+.testimonial_carousal{
+    position: relative;
+    margin-bottom: 60px;
+}
+.testimonial_carousal .customers_comments{
+    width: 98%;
+}
+.testimonial_carousal p{
     color: #FFF;
     font-size: 18px;
     font-style: italic;
-    width: 93%;
+    margin-bottom: 10px;
 }
 
 .client{
@@ -308,40 +330,44 @@ hr{
 }
 .client .client_info p{
     font-style: normal;
+    text-align: left;
 }
 .client .client_info h5{
     color: #FFF;
     font-size: 16px;
+    text-align: left;
+
 }
 
-.owl-dots{
+.testimonial_carousal .owl-dots{
     position: absolute;
-    bottom: -125px;
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
 }
-.owl-dot span{
-    display: inline-block;
-    height: 10px;
-    width: 10px;
+
+.testimonial_carousal .owl-dots .owl-dot{
+    margin: 5px;
+} 
+
+.testimonial_carousal .owl-dots .owl-dot span{
+    display: block;
+    height: 15px;
+    width: 15px;
     background:transparent;
     border: 2px solid #342f32 ;
     border-radius: 50px;
     margin: 0 10px;
     transition: .4s all ease-in-out;
 }
-.owl-dots .active span{
-    display: inline-block;
-    height: 18px;
-    width: 18px;
+.testimonial_carousal .owl-dots .active span{
     background: #FFF;
-    border-radius: 50px;
-    margin: 0 10px;
     transition: .4s all ease-in-out;
 }
-.owl-dot:focus{
+.testimonial_carousal .owl-dots .owl-dot:focus{
     outline: none;
 }
+
 
 .theme_download{
     padding: 50px 0;
@@ -349,8 +375,12 @@ hr{
 }
 .theme_download h1{
     font-size: 32px;
+    color: #eaeaea;
+}
+.theme_download h1 b{
     color: #FFF;
 }
+
 
 .theme_items{
     align-items: center;
@@ -443,7 +473,7 @@ hr{
     padding: 50px 30px;
     position: absolute;
     width: 50%;
-    bottom: -70px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
 }
